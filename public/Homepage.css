@@ -1,0 +1,32 @@
+.display-4 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.p1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.lead {
+  text-align: center;
+}
+
+.fa-fire:before {
+  content: "\f06d";
+  margin-right: 5px;
+}
+
+#fa {
+  margin-right: 5px;
+}
+
+#reservations {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+#tables {
+  background-color: #007bff;
+}
