@@ -30,18 +30,18 @@
         <form id="card">
           <div class="mb-3">
             <div id="title" ><h2>Enter information below to make a reservation!</h2></div>
-            <input type="text" class="form-control" placeholder="Name">
+            <input id="name" type="text" class="form-control" placeholder="Name">
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Email">
+            <input id="email" type="text" class="form-control" placeholder="Email">
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Phone">
+            <input id="phone" type="text" class="form-control" placeholder="Phone">
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="ID #">
+            <input id="id" type="text" class="form-control" placeholder="ID #">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button id="submit" type="submit" class="btn btn-primary">Submit</button>
         </form>
         
       </div>
@@ -51,9 +51,38 @@
   
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"></script>
   <script>
     
+    document.getElementById("submit").addEventListener("click", event => {
+      event.preventDefault()
+
+      let name = document.getElementById("name")
+      let email = document.getElementById("email")
+      let phone = document.getElementById("phone")
+      let id = document.getElementById("id")
+
+      let newRes = {
+        name: name,
+        email: email,
+        phone: phone,
+        id: id
+      }
+
+      axios.post('/api/patrons', newRes)
+        .then( res => {
+          console.log(res)
+
+          document.getElementById("name").value = ''
+          document.getElementById("email").value = ''
+          document.getElementById("phone").value = ''
+          document.getElementById("id").value = ''
+        })
+        .catch(err => console.error(err))
+    })
+
   </script>
 </body>
 </html>
