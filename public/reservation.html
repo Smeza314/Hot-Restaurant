@@ -19,7 +19,7 @@
         <h1 class="display-4">🔥 Hot Restaurant</h1>
         <hr>
         <p>Book your seat before they are all gone!</p>
-        <button class="btn btn-primary" id="tables">View Tables</button>
+        <button onclick="window.location.href='./table.html'" class="btn btn-primary" id="tables">View Tables</button>
         <button onclick="window.location.href='./index.html'" class="btn btn-secondary" id="home">🏠 Home</button>
       </div>
     </div>
@@ -64,14 +64,14 @@
       let phone = document.getElementById("phone").value
       let id = document.getElementById("id").value
 
-      let newRes = {
+      let newPatron = {
         name: name,
         email: email,
         phone: phone,
         id: id
       }
 
-      axios.post('/api/patrons', newRes)
+      axios.post('/api/patrons', newPatron)
         .then( res => {
           console.log(res)
 
