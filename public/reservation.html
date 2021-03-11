@@ -59,10 +59,10 @@
     document.getElementById("submit").addEventListener("click", event => {
       event.preventDefault()
 
-      let name = document.getElementById("name")
-      let email = document.getElementById("email")
-      let phone = document.getElementById("phone")
-      let id = document.getElementById("id")
+      let name = document.getElementById("name").value
+      let email = document.getElementById("email").value
+      let phone = document.getElementById("phone").value
+      let id = document.getElementById("id").value
 
       let newRes = {
         name: name,
