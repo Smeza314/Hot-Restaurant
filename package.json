@@ -1,0 +1,23 @@
+{
+  "name": "Hot-Restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smeza314/Hot-Restaurant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Smeza314/Hot-Restaurant/issues"
+  },
+  "homepage": "https://github.com/Smeza314/Hot-Restaurant#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
